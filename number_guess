@@ -1,0 +1,21 @@
+import random
+
+answer = random.randint(1, 10)
+guess = 0
+
+while guess < 5:
+	try:
+		player_guess = int(raw_input("Enter a guess between 1 and 10, you get 5 guesses: "))
+	except ValueError:
+		print "Invalid input"
+
+	if player_guess == answer:
+		print "You win!"
+		break
+	elif player_guess != answer and guess < 5:
+		guess += 1
+		if guess < 5:
+			print "Sorry, try again"
+		else:
+			print "Sorry the answer was " + str(answer)
+			print "Game Over"
